@@ -15,18 +15,15 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.csrf().disable()
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf().disable()
                 .cors().and()
                 .authorizeHttpRequests()
-                .requestMatchers("/owner/signup").permitAll()
-                .requestMatchers("/owner/getOwnerByEmailId/**").permitAll()
-                .requestMatchers("/owner/forgot_password").permitAll()
-                .anyRequest()
-                .authenticated()
+                .requestMatchers("/owner/signup", "/owner/getOwnerByEmailId/**", "/owner/forgot_password").permitAll()
+                .anyRequest().authenticated()
                 .and()
-                .httpBasic();
-        return httpSecurity.build();
+                .httpBasic().disable(); // disable browser popup
+        return http.build();
     }
 
     @Bean
