@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "https://customerrelationshipmanagerfrontend-production.up.railway.app/")
+@CrossOrigin(origins = "https://customer-relationship-manager-frontend.onrender.com/")
 @RestController
 @RequestMapping("/Customer")
 public class CustomerController {
