@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@CrossOrigin(origins = "https://customer-relationship-manager-frontend.onrender.com")
+@CrossOrigin(origins = "https://crm-frontend-production-f09c.up.railway.app")
 @RestController
 @RequestMapping("/owner")
 public class OwnerController {
